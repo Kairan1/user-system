@@ -11,6 +11,7 @@
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
         <!-- Styles / Scripts -->
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @else
@@ -20,26 +21,18 @@
         @endif
     </head>
     <body >
-        <body style="text-align:center; margin-top:100px; font-family:Arial;">
+      @extends('layouts.app')
 
-    <h1>Welcome to User Registration System</h1>
+@section('content')
 
-    <br><br>
+<div class="text-center">
+    <h1 class="mb-4">Welcome</h1>
 
-    <a href="/register">
-        <button style="padding:10px 20px; font-size:16px;">
-            Register User
-        </button>
-    </a>
+    <a href="/register" class="btn btn-primary m-2">Register User</a>
+    <a href="/search" class="btn btn-success m-2">Search User</a>
+</div>
 
-    <br><br>
-
-    <a href="/search">
-        <button style="padding:10px 20px; font-size:16px;">
-            Search User
-        </button>
-    </a>
-
+@endsection
 </body>
     </body>
 </html>
